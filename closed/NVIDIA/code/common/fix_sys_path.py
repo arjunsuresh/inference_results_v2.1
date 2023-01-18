@@ -71,16 +71,12 @@ class ScopedRestrictedImport:
         """Creates a ScopedRestrictedImport where sys.path equals `restricted_path`. If no `restricted_path` is
         specified, defaults to `G_NO_USERHOME_LOCAL`.
         """
-        self.old_sys_path = None
-        self.restricted_path = restricted_path
-
+        pass
     def __enter__(self):
-        self.old_sys_path = sys.path[:]
-        sys.path = self.restricted_path[:]
         return self
 
     def __exit__(self, type, value, traceback):
-        sys.path = self.old_sys_path[:]
+        pass
 
     def path_as_string(self):
         return ":".join(x for x in self.restricted_path if len(x) > 0)
