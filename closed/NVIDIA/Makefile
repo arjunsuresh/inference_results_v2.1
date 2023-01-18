@@ -27,7 +27,7 @@ ifndef HOST_HOSTNAME
 endif
 HOST_HOSTNAME_SHORT := $(firstword $(subst ., , $(HOST_HOSTNAME)))
 HOSTNAME_SHORT := $(firstword $(subst ., , $(HOSTNAME)))
-PYTHON3_CMD := $(shell if ! python3 --version | grep 3.8 &> /dev/null; then echo python3.8; else echo python3; fi)
+PYTHON3_CMD := python3 # $(shell if ! python3 --version | grep 3.8 &> /dev/null; then echo python3; else echo python3; fi)
 
 USE_NIGHTLY ?= 0
 USE_CPU ?= 0

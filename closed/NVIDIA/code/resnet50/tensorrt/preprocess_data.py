@@ -20,10 +20,10 @@ import math
 import os
 import shutil
 
-from code.common.fix_sys_path import ScopedRestrictedImport
-with ScopedRestrictedImport():
-    import numpy as np
-    import cv2
+#from code.common.fix_sys_path import ScopedRestrictedImport
+#with ScopedRestrictedImport():
+import numpy as np
+import cv2
 
 from code.common import logging
 from code.common.image_preprocessor import ImagePreprocessor, center_crop, resize_with_aspectratio

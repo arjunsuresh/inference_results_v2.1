@@ -39,6 +39,7 @@
 #include "lwis_3dunet_buffers.h"
 #include "qsl_3dunet.hpp"
 #include "unet3d_sw.cuh"
+#include <optional>
 
 // For debugging the timing of each part
 class Timer

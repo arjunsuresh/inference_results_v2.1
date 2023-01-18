@@ -37,6 +37,7 @@
 #include "system_under_test.h"
 #include "test_settings.h"
 #include "utils.hpp"
+#include <optional>
 
 // For debugging the timing of each part
 class Timer

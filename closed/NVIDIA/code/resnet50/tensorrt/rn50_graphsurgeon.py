@@ -325,7 +325,7 @@ class RN50GraphSurgeon(object):
         self.output_names = list()
         self.model = None
         self.dyn_range_map = {}
-        if os.path.exists(self.cache_file):
+        if cache_file and os.path.exists(self.cache_file):
             self.dyn_range_map = get_dyn_ranges(self.cache_file)
         else:
             print("WARNING: No calibration cache available for parsing.")
@@ -393,6 +393,8 @@ class RN50GraphSurgeon(object):
         if disable_beta1_smallk:
             policies.remove('Beta1Smallk')
 
+        if os.environ.get('SKIP_POLICIES'):
+            policies = []
         for policy in policies:
             for _f in self.fusion_map.get(policy):
                 self.runme(_f)
