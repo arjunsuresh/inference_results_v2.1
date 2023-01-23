@@ -237,9 +237,9 @@ def generate_configs(system):
 def yes_no_prompt(message, default=True):
     choices = ["", "y", "n"]
     if default is True:
-        choice_str = "[Y/n]"
+        choice_str = "[y/n]"
     elif default is False:
-        choice_str = "[y/N]"
+        choice_str = "[y/n]"
     elif default is None:
         choice_str = "[y/n]"
         choices = ["y", "n"]
