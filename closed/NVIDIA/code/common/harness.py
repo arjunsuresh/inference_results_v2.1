@@ -139,6 +139,8 @@ class BaseBenchmarkHarness:
         return full_benchmark_name
 
     def get_full_log_dir(self):
+        if os.environ.get("MLPERF_LOADGEN_LOGS_DIR"):
+            return os.environ.get("MLPERF_LOADGEN_LOGS_DIR")
         return os.path.join(self.args["log_dir"], self.get_system_name(), self._get_submission_benchmark_name(),
                             self.scenario.valstr())
 
