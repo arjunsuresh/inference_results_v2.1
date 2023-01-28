@@ -283,10 +283,7 @@ class BaseBenchmarkHarness:
         scenario_key = scenario_loadgen_log_keys[self.scenario]
         results = from_loadgen_by_keys(
             os.path.join(
-                self.args["log_dir"],
-                self.get_system_name(),
-                self._get_submission_benchmark_name(),
-                self.scenario.valstr()),
+                self.get_full_log_dir()),
             ["result_validity", scenario_key])
 
         if scenario_key not in results:

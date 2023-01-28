@@ -156,6 +156,10 @@ class RunHarnessHandler(GenerateConfFilesHandler):
         self._update_json(summary_file, accuracy)
 
     def report_stats(self):
+
+        if os.environ.get('MLPERF_LOADGEN_LOGS_DIR'):
+            return
+
         print(f"\n======================= Extra Perf Stats: =======================\n")
         print(f"{self.benchmark_conf['config_name']}-{self.benchmark_conf['config_ver']}:")
         log_paths = glob.glob(os.path.join(self.log_dir, "**", "mlperf_log_detail.txt"), recursive=True)
