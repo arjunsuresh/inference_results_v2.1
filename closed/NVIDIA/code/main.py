@@ -364,8 +364,9 @@ def handle_run_harness(config, gpu=True, dla=True, profile=None,
         results[config_name] = {}
     results[config_name][benchmark.valstr()] = result
 
-    with open(summary_file, "w") as f:
-        json.dump(results, f)
+    if not os.environ.get('MLPERF_LOADGEN_LOGS_DIR'):
+        with open(summary_file, "w") as f:
+            json.dump(results, f)
 
     # Check accuracy from loadgen logs.
     if not compliance:
@@ -690,11 +691,11 @@ def dispatch_action(main_args, benchmark_conf, conf_ver, equiv_engine_setting=No
             # Cleanup audit.config
             logging.info("AUDIT HARNESS: Cleaning Up audit.config...")
             auditing.cleanup()
-    elif action == "run_audit_verification":
+    elif action == "run_audit_verification" and not os.environ.get('MLPERF_LOADGEN_LOGS_DIR'):
         logging.info("Running compliance verification for test " + main_args['audit_test'])
         handle_audit_verification(audit_test_name=main_args['audit_test'], config=benchmark_conf)
         auditing.cleanup()
-    elif action == "run_cpu_audit_verification":
+    elif action == "run_cpu_audit_verification" and not os.environ.get('MLPERF_LOADGEN_LOGS_DIR'):
         logging.info("Running compliance verification for test " + main_args['audit_test'])
         if not benchmark_conf["use_cpu"]:
             raise RuntimeError("Cannot run CPU harness for non-CPU system accelerator")
