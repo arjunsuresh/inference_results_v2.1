@@ -35,7 +35,7 @@ Final[str]: Path to the MLCommons inference repo.
 # into sys.path so it can successfully import it. Use a ScopedRestrictedImport for this.
 _new_path = [os.path.join(G_MLCOMMONS_INF_REPO_PATH, "tools", "submission")] + sys.path
 with ScopedRestrictedImport(_new_path):
-    submission_checker = import_module("submission-checker")
+    submission_checker = import_module("submission_checker")
     G_ACC_PATTERNS = submission_checker.ACC_PATTERN
     # MLCommons doesn't add the current version until it is close to submission
     _submission_model_config = submission_checker.MODEL_CONFIG
