@@ -110,7 +110,7 @@ INFERENCE_HASH = b1c4cb972df6f51c5f08953dcb6f8ce5d163b41e
 # Set the power-dev directory
 POWER_DEV_DIR = $(BUILD_DIR)/power-dev
 POWER_DEV_URL = https://github.com/mlcommons/power-dev.git
-POWER_DEV_HASH = 1a16663c46a3726fd15b3a48e255cb968543776e 
+POWER_DEV_HASH = 1a16663c46a3726fd15b3a48e255cb968543776e
 POWER_CLIENT_SCRIPT = $(BUILD_DIR)/power-dev/ptd_client_server/client.py
 POWER_NTP_URL = ib-01.dc4-in.nvidia.com
 POWER_SERVER_IP ?= $(shell $(PYTHON3_CMD) -m scripts.infra.power_server_ips $(HOST_HOSTNAME_SHORT))

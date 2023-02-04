@@ -85,7 +85,7 @@ class BaseBenchmarkHarness:
 
         # Enumerate harness executable
         self.executable = self._get_harness_executable()
-        #self.check_file_exists(self.executable)
+        self.check_file_exists(self.executable)
 
         self.use_jemalloc = False
 
