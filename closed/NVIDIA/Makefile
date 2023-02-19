@@ -105,12 +105,12 @@ INFERENCE_DIR = $(BUILD_DIR)/inference
 INFERENCE_URL = https://github.com/mlcommons/inference.git
 LOADGEN_INCLUDE_DIR ?= $(INFERENCE_DIR)/loadgen
 LOADGEN_LIB_DIR ?= $(LOADGEN_INCLUDE_DIR)/build
-INFERENCE_HASH = b1c4cb972df6f51c5f08953dcb6f8ce5d163b41e
+INFERENCE_HASH = f5367250115ad4febf1334b34881ab74f2e55bfe
 
 # Set the power-dev directory
 POWER_DEV_DIR = $(BUILD_DIR)/power-dev
 POWER_DEV_URL = https://github.com/mlcommons/power-dev.git
-POWER_DEV_HASH = 1a16663c46a3726fd15b3a48e255cb968543776e
+POWER_DEV_HASH = 678c23d9eb02f5d9719ed4c115831b4384809aab
 POWER_CLIENT_SCRIPT = $(BUILD_DIR)/power-dev/ptd_client_server/client.py
 POWER_NTP_URL = ib-01.dc4-in.nvidia.com
 POWER_SERVER_IP ?= $(shell $(PYTHON3_CMD) -m scripts.infra.power_server_ips $(HOST_HOSTNAME_SHORT))
